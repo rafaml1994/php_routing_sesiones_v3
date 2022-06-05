@@ -2,6 +2,8 @@
     <div class="m-0 row justify-content-center" style="justify-content: space-between; background-color:white">
         <div id="card" class="col-sm-5 m-0 row justify-content-center">
             <h3 class="text-center pt-5">Bienvenido a nuestra App!</h3>
+            <div class="container">
+            </div>
             <div class=" card row mx-auto shadow p-3 mb-5 mt-5 bg-body rounded" style="width: 18rem; ">
                 <img src="http://eligeeducar.cl/content/uploads/2020/09/clases-virtuales.jpg" alt="" class="card-img-top">
                 <div class="card-body">

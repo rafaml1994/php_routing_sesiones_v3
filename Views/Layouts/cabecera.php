@@ -19,9 +19,9 @@
             <a class=" btn btn-outline-success" style="color:white !important;" href="?controller=alumno&&action=logout">Cerrar sesion</a>
           </li>
         </ul>
-      <?php } elseif (isset($_SESSION) && $_SESSION['rol'] === true) { ?>
+      <?php } elseif (isset($_SESSION) &&  $_SESSION['iniciada'] === true && $_SESSION['rol'] === true) { ?>
         <ul class="navbar-nav mb-2 mb-lg-0" style="width:100%;">
-          <li class="nav-item" style=" margin-left:42% ;width:auto">
+          <li class="nav-item" style=" margin-left:43% ;width:auto">
             <a class="nav-link active link" aria-current="page" href="?controller=profesor&action=index">Inicio</a>
           </li>
           <li class="nav-item">

@@ -29,7 +29,7 @@ if ($ok === true) {
         $insert->execute();
 
         setcookie('update', 1, time() + 10000, '/'); //poner el path para usar la cookie en distintos directorios
-        var_dump($_COOKIE['update']);
+
         header('Location: ?controller=home&action=sesion');
     } else {
         setcookie('noupdate', 1, time() + 10000, '/'); //generar mensaje de cookie error con "no coinciden las contraseñas" 
