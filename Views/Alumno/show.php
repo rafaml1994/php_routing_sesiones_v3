@@ -10,19 +10,21 @@
             <?php
             $conexion = Connect::getConnection();
             $resultado = $conexion->query("select alumnos.usuario, grupo.grupo from alumnos inner join grupo on alumnos.idalumno = grupo.idalumno order by grupo.grupo asc; ");
+            $coincidir = $conexion->query("select alumnos.usuario, grupo.grupo from alumnos inner join grupo on alumnos.idalumno = grupo.idalumno order by grupo.grupo asc; ");
             if ($resultado) {
                 foreach ($resultado->fetchAll() as $fila) {
                     //Buscamos el grupo del alumno y lo extraemos.
                     if ($fila[0] === $_SESSION['nombre']) {
                         $grupo = $fila[1];
                     }
-                    //Igualamos el grupo del alumno con el grupo de la DB para que nos lo pinte en caso de que sean iguales.
-                    if ($grupo === $fila[1]) {
-                        echo "<tr class='text-center bg-success'><td class='text-center'scope='row'><strong>" . $fila[1] . "</strong></td>
-                        <td class='text-center'><strong>" . strtoupper($fila[0]) . "</strong></td></tr>";
+                }
+                foreach ($coincidir->fetchAll() as $fila2) {
+                    if ($grupo === $fila2[1]) {
+                        echo "<tr class='text-center bg-success'><td class='text-center'scope='row'><strong>" . $fila2[1] . "</strong></td>
+                            <td class='text-center'><strong>" . strtoupper($fila2[0]) . "</strong></td></tr>";
                     } else {
-                        echo "<tr><td class='text-center'scope='row'>" . $fila[1] . "</td>";
-                        echo "<td class='text-center'>" . strtoupper($fila[0]) . "</td></tr>";
+                        echo "<tr><td class='text-center'scope='row'>" . $fila2[1] . "</td>";
+                        echo "<td class='text-center'>" . strtoupper($fila2[0]) . "</td></tr>";
                     }
                 }
             } else {

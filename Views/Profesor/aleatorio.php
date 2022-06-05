@@ -31,9 +31,10 @@ $profesor = $_SESSION['usuario'];
 //iniciamos el  proceso para crear los grupos:
 
 $limite = $_POST['select'];
-// Transformar para que se vean los grupos (terminar)
-$grupo = count($id) / $limite;
 
+$grupo = round((count($id) / $limite), 0, PHP_ROUND_HALF_UP);
+// var_dump($limite . "<br>");
+// echo "El numero de grupos a crear es: " . $grupo;
 
 //pasar el grupo como un post desde show() indicando el número de grupos.
 $vueltas = 0;
