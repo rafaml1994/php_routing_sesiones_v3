@@ -19,7 +19,7 @@
         <tr style="text-align:center">
           <th scope="col">Id</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Contraseña</th>
+          <th scope="col">Dni</th>
           <th></th>
           <th></th>
         </tr>
@@ -31,7 +31,7 @@
         foreach ($resultado->fetchAll() as $fila) {
           echo "<tr style='text-align: center'><th scope='row'>" . $fila[1] . "</th>";
           echo "<td>" . $fila[2] . "</td>";
-          echo "<td>" . $fila[3] . "</td>";
+          echo "<td>" . $fila[4] . "</td>";
           echo "<td style='text-align: right;'><a class='btn btn-primary' href='?controller=profesor&action=updateshow&id=" . $fila[1] . "'>Actualizar</a></td>";
           echo "<td><a class='btn btn-danger' style='background-color:red; border-color:red;' href='?controller=profesor&action=delete&id=" . $fila[1] . "'>Eliminar</a></td></tr>";
         }
@@ -40,7 +40,7 @@
     </table>
   </div>
   <h5 class="text-center mb-5">Si tienes un grupo de trabajo ya creado y añades un nuevo alumno, borra los grupos de trabajo para añadir al nuevo alumno y... ¡Listo!</h5>
-  <div class="container col-2">
+  <div class="container col-2 select">
     <form action="?controller=profesor&action=aleatorio" method="post">
       <select class="form-select mb-5 " name="select" aria-label="Default select example">
         <option selected value="1" class="text-center">1 - Persona</option>

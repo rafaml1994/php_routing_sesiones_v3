@@ -141,7 +141,10 @@ option:hover{
     width: 80%;
   }
   .bg_color{
-    top:40%;
+    top:50%;
+  }
+  .select{
+    width:60%;
   }
 }
 
@@ -149,5 +152,8 @@ option:hover{
   .nav-item{
     margin: 0 !important;
   }
-  
+  .login{
+    left: 10%;
+    width: 80%;
+  }
 }

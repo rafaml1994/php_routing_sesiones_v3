@@ -14,7 +14,7 @@
       <div class="mb-3">
         <div class="mb-3">
           <label for="dni" class="form-label" style="font-weight: bold;">Usuario del alumno :</label>
-          <input type="text" class="form-control mb-4" id="dni" aria-describedby="Nombre" placeholder="Introduzca DNI del alumno" name="dni">
+          <input type="text" class="form-control mb-4" id="dni" aria-describedby="Nombre" placeholder="Ej. 11111111A" name="dni">
         </div>
         <label for="contraseña" class="form-label mb-4" style="font-weight: bold;">Contraseña del alumno :</label>
         <input type="password" class="form-control" id="contraseña" placeholder="Introduzca contraseña" name="contraseña">
