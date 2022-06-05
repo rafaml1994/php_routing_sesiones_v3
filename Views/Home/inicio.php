@@ -12,14 +12,12 @@
                     <a href="index.php?controller=home&action=sesion" class="btn btn-primary">Log in</a>
                 </div>
             </div>
-            <div class="col-sm-5 m-0 row justify-content-center">
-                <div class=" card shadow p-3 mb-5 mt-5 bg-body rounded" style="width: 18rem; ">
-                    <img src="https://i.ytimg.com/vi/DYE1rkjvSbI/maxresdefault.jpg" alt="alumnos" class="card-img-top">
-                    <div class="card-body">
-                        <h4 class="card-title">¿Has olvidado tu contraseña?</h4>
-                        <p class="card-text" style="margin-bottom: 50%;">No te preocupes, puedes recuperar tu contraseña aquí.</p>
-                        <a href="index.php?controller=home&action=restore" class="btn btn-primary">Cambiar contraseña</a>
-                    </div>
+            <div class="card row mx-auto shadow p-3 mb-5 mt-5 bg-body rounded" style="width: 18rem; ">
+                <img src="https://i.ytimg.com/vi/DYE1rkjvSbI/maxresdefault.jpg" alt="alumnos" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">¿Has olvidado tu contraseña?</h4>
+                    <p class="card-text" style="margin-bottom: 50%;">No te preocupes, puedes recuperar tu contraseña aquí.</p>
+                    <a href="index.php?controller=home&action=restore" class="btn btn-primary">Cambiar contraseña</a>
                 </div>
             </div>
         </div>
