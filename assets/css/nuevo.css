@@ -121,10 +121,19 @@ option:hover{
     transform: translateY(10px);
   }
 }
+/* Formularios post*/
 .login{
   position: absolute;
   left: 38%;
 }
+/* video*/
+.video{
+  position: absolute;
+  left: 15%;
+  border-radius: 5px;
+  background-color: #47474700;
+}
+
 /* MEDIA QUERIES*/
 
 @media (max-width: 700px) {
@@ -145,6 +154,9 @@ option:hover{
   }
   .select{
     width:60%;
+  }
+  .video{
+    display: none;
   }
 }
 
