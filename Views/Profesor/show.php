@@ -19,7 +19,7 @@
         <tr style="text-align:center">
           <th scope="col">Id</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Dni</th>
+          <th scope="col">DNI</th>
           <th></th>
           <th></th>
         </tr>

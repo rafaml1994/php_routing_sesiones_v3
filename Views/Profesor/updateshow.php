@@ -13,7 +13,7 @@
       </div>
       <div class="mb-3">
         <label for="contraseña" class="form-label mb-4" style="font-weight: bold;">Actualizar dni :</label>
-        <input type="text" class="form-control" id="dni" placeholder="ej. 111111119" name="dni">
+        <input type="text" class="form-control" id="dni" placeholder="ej. 11111111A" name="dni">
       </div>
       <button type="submit" class="btn btn-primary mb-5" style="width:100%;">Actualizar</button>
     </form>
