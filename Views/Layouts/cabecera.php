@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <?php if ($_SESSION['nombre']) { ?>
         <ul class="navbar-nav mb-2 mb-lg-0" style="width:100%">
-          <li class="nav-item" style=" margin-left:40% ">
+          <li class="nav-item" style=" margin-left:44% ">
             <a class="nav-link active" aria-current="page" href="?controller=alumno&action=index">Inicio</a>
           </li>
           <li class="nav-item" style=" margin-right:35% ">
@@ -21,7 +21,7 @@
         </ul>
       <?php } elseif (isset($_SESSION) && $_SESSION['rol'] === true) { ?>
         <ul class="navbar-nav mb-2 mb-lg-0" style="width:100%;">
-          <li class="nav-item" style=" margin-left:40% ;width:auto">
+          <li class="nav-item" style=" margin-left:42% ;width:auto">
             <a class="nav-link active link" aria-current="page" href="?controller=profesor&action=index">Inicio</a>
           </li>
           <li class="nav-item">
@@ -36,7 +36,7 @@
         </ul>
       <?php } else { ?>
         <ul class="navbar-nav mb-2 mb-lg-0" style="width:100%">
-          <li class="nav-item" style=" margin-left:45%">
+          <li class="nav-item" style=" margin-left:47%">
             <a class="nav-link active" aria-current="page" href="?controller=home&action=index">Inicio</a>
           </li>
           <li class="nav-item">

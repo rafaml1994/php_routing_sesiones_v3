@@ -6,7 +6,7 @@
 
 <head>
 
-  <title> Controlla</title>
+  <title>Controlla@</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Librerias Boostrap-->
@@ -23,7 +23,9 @@
   <header style="background-color:black;">
     <div id="particles-js" style="height: 200px;">
       <!-- Probar a meterlo en un div y fondo trnasparente -->
-      <h1>Hola</h1>
+      <div id="demotext">
+        <h1>Controll@</h1>
+      </div>
     </div>
     <?php
     require_once('cabecera.php');
