@@ -16,7 +16,6 @@ foreach ($resultado->fetchAll() as $fila) {
     $_SESSION['usuario'] = $fila[1];
     $_SESSION['contraseña'] = $fila[2];
     if ($_SESSION['contraseña'] === $contraseña) {
-        echo "contraseña ok" . var_dump($contraseña);
         $pass = true;
     }
     $_SESSION['rol'] = $fila[3];
@@ -25,6 +24,9 @@ foreach ($resultado2->fetchAll() as $falumno) {
     $_SESSION['idAlumno'] = $falumno[1];
     $_SESSION['nombre'] = $falumno[2];
     $_SESSION['contraseñaAlumno'] = $falumno[3];
+    if ($_SESSION['contraseñaAlumno'] === $contraseña) {
+        $pass = true;
+    }
 }
 if (isset($_SESSION) && $_SESSION['usuario'] === $usuario && $_SESSION['rol'] === true) {
     if ($pass === true) {
@@ -39,11 +41,11 @@ if (isset($_SESSION) && $_SESSION['usuario'] === $usuario && $_SESSION['rol'] ==
 } elseif (isset($_SESSION) && $_SESSION['nombre'] === $usuario) {
     if ($pass === true) {
         $_SESSION['iniciada'] = true;
-        //header('Location: ?controller=alumno&&action=index');
+        header('Location: ?controller=alumno&&action=index');
     } else {
-
-        //mensaje de error como en profesor
-        //header('Location: ?controller=alumno&&action=index');
+        session_destroy();
+        setcookie('control', 1, time() + 1000, '/');
+        header('Location: ?controller=home&&action=sesion');
     }
 } else {
     session_destroy();
