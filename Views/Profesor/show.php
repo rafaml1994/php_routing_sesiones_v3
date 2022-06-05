@@ -41,19 +41,20 @@
   </div>
   <h5 class="text-center mb-5">Si tienes un grupo de trabajo ya creado y añades un nuevo alumno, borra los grupos de trabajo para añadir al nuevo alumno y... ¡Listo!</h5>
   <div class="container col-2">
-    <select class="form-select mb-5 " aria-label="Default select example">
-      <option selected class="text-center">Elige una opcion</option>
-      <option value="1" class="text-center ">1</option>
-      <option value="2" class="text-center">2</option>
-      <option value="3" class="text-center">3</option>
-      <option value="4" class="text-center">4</option>
-      <option value="5" class="text-center">5</option>
-    </select>
+    <form action="?controller=profesor&action=aleatorio" method="post">
+      <select class="form-select mb-5 " name="select" aria-label="Default select example">
+        <option selected value="1" class="text-center">1 - Persona</option>
+        <option value="2" class="text-center">2 - Personas</option>
+        <option value="3" class="text-center">3 - Personas</option>
+        <option value="4" class="text-center">4 - Personas</option>
+        <option value="5" class="text-center">5 - Personas</option>
+      </select>
   </div>
   <div class="container col text-center mb-5" role="group" aria-label="Basic example">
-    <a class='btn btn-primary' href='?controller=profesor&action=aleatorio'>Crear grupos</a>
     <a class='btn btn-danger' href='?controller=profesor&action=borrarAlea'>Eliminar grupos</a>
+    <button class='btn btn-primary' type="submit">Crear grupos</a>
   </div>
+  </form>
   <div class="mt-5 pt-1 pb-1 mb-5 rounded shadow p-3 mb-5 bg-body rounded" style="background: rgb(0,0,0);
 background: linear-gradient(90deg, rgba(0,0,0,1) 25%, rgba(26,255,0,1) 100%, rgba(0,47,255,1) 100%);">
     <h1 class="text-center">Tus grupos creados:</h1>
