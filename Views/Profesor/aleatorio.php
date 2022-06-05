@@ -25,14 +25,15 @@ shuffle($id);
 //var_dump($id[5]);
 
 //sesion del profesor que crea el grupo:
-$profesor = $_SESSION['usuario'];
+//$profesor = $_SESSION['usuario'];
 
 
 //iniciamos el  proceso para crear los grupos:
 
 $limite = $_POST['select'];
-
+$limite = (empty($limite)) ? 3 : $limite;
 $grupo = round((count($id) / $limite), 0, PHP_ROUND_HALF_UP);
+
 // var_dump($limite . "<br>");
 // echo "El numero de grupos a crear es: " . $grupo;
 

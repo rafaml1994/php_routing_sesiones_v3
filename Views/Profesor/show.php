@@ -39,7 +39,8 @@
       </tbody>
     </table>
   </div>
-  <h5 class="text-center mb-5">Si tienes un grupo de trabajo ya creado y añades un nuevo alumno, borra los grupos de trabajo para añadir al nuevo alumno y... ¡Listo!</h5>
+  <h4 class="text-center mb-4">Por defecto, la aplicacion crea los grupos de 3 personas. En caso de que quieras otra opción, elimina el grupo y crealo a tu gusto.</h4>
+  <h5 class="text-center mb-5 ">*La aplicación reajustará los alumnos a los grupos, para que ningún alumno se quede sin grupo de trabajo.</h5>
   <div class="container col-2 select">
     <form action="?controller=profesor&action=aleatorio" method="post">
       <select class="form-select mb-5 " name="select" aria-label="Default select example">

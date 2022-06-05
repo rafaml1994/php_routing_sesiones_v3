@@ -127,7 +127,7 @@ option:hover{
   left: 38%;
 }
 /* video*/
-.video{
+.video-container{
   position: absolute;
   left: 15%;
   border-radius: 5px;
@@ -155,17 +155,26 @@ option:hover{
   .select{
     width:60%;
   }
+  .video-container{
+    left:0;
+  }
   .video{
     display: none;
   }
 }
 
-@media (max-width:1550px) {
+@media (max-width:1650px) {
   .nav-item{
     margin: 0 !important;
   }
   .login{
     left: 10%;
     width: 80%;
+  }
+  .video-container{
+    left:10%;
+  }
+  .video{
+    display: none;
   }
 }

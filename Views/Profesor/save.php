@@ -32,7 +32,15 @@ if ($contraseña === $repetir && !empty($contraseña) && $error !== true && $err
         $insert = $conexion->prepare("insert into alumnos values('$profesor',default, '$usuario','$contraseña','$dni')");
         $insert->execute();
         $_SESSION['mensaje'] = "¡Alumno creado correctamente!";
-        header('Location: index.php?controller=profesor&action=show');
+
+        $resultado = $conexion->query("drop table grupo;");
+        $resultado->execute();
+
+        $_SESSION['grupos'] = 0;
+        require_once('aleatorio.php');
+
+        //header('Location: index.php?controller=profesor&action=show');
+
     } else {
         $_SESSION['mensajeW'] = "Formato DNI incorrecto o campo vacío";
         require_once('register.php');
