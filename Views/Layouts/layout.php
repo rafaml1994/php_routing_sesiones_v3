@@ -47,7 +47,6 @@
   <script src="assets/js/particles.js"></script>
   <script src="assets/js/app.js"></script>
 
-
 </body>
 
 </html>

@@ -41,6 +41,9 @@ if (isset($_SESSION) && $_SESSION['usuario'] === $usuario && $_SESSION['rol'] ==
 } elseif (isset($_SESSION) && $_SESSION['nombre'] === $usuario) {
     if ($pass === true) {
         $_SESSION['iniciada'] = true;
+        //cambiado para poder votar con token. 
+        $token = md5(uniqid(rand(), true));
+        $_SESSION['token'] = $token;
         header('Location: ?controller=alumno&&action=index');
     } else {
         session_destroy();

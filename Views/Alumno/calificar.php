@@ -12,10 +12,10 @@
                 <input type="number" class="form-control mb-4" id="usabilidad" value="0" name="usabilidad">
             </div>
             <div class="mb-3">
-                <label for="codigo" class="form-label mt-2" max="10" min="0" style="font-weight: bold;">Usabilidad:</label>
+                <label for="codigo" class="form-label mt-2" max="10" min="0" style="font-weight: bold;">Codigo:</label>
                 <input type="number" class="form-control mb-4" id="codigo" value="0" name="codigo">
             </div>
-            <button type="submit" class="btn btn-primary mb-5" name="enviar" style="width:100%;">Puntuar</button>
+            <button type="submit" class="btn btn-primary mb-5" name="enviar" onclick="alerta()" style="width:100%;">Puntuar</button>
         </form>
     </div>
 </div>
@@ -28,7 +28,9 @@ if (isset($_POST['enviar'])) {
 
     $usabilidad = $_POST['usabilidad'];
     $codigo = $_POST['codigo'];
+
     //marcarmos un límite:
+
     $usabilidad = ($usabilidad > 10) ? $usabilidad = 10 : $usabilidad;
     $usabilidad = ($usabilidad < 0) ? $usabilidad = 0 : $usabilidad;
 
@@ -36,7 +38,7 @@ if (isset($_POST['enviar'])) {
     $codigo = ($codigo < 0) ? $codigo = 0 : $codigo;
 
     $id = $_GET['id'];
-    $total = ($usabilidad + $codigo) / 2;
+    $total = (($usabilidad + $codigo) / 2);
 
     $calificar = $conexion->query("select usabilidad,codigo,total from calificar where idalumno = '$id';");
     foreach ($calificar->fetchAll() as  $fila) {
@@ -49,8 +51,6 @@ if (isset($_POST['enviar'])) {
     $resultado2 = $codigo + $c;
     $resultado3 = $total + $t;
 
-    //hacer el insert SOLO en caso de que no lo hayas usado, validacion de DNI.
-
 
     $insert = $conexion->prepare('UPDATE calificar SET usabilidad=:u, codigo=:c, total=:t WHERE idalumno=' . $id);
     $insert->bindValue(':u', $resultado1);
@@ -58,6 +58,7 @@ if (isset($_POST['enviar'])) {
     $insert->bindValue(':t', $resultado3);
 
     $insert->execute();
-    header('Location: index.php?controller=alumno&action=calificaciones');
+    setcookie($id, $id, time() + 10000000000, '/');
+    //header('Location: index.php?controller=alumno&action=calificaciones');
 }
 ?>

@@ -50,10 +50,14 @@ h1{
 .btn{
   background-color: green;
   border-color: green;
-}
+  box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.651);
 
+}
+.btn:focus{
+
+  box-shadow: none !important;
+}
 .btn:hover{
-  box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.651);
   background-color: green;
   border-color: green;
 }
@@ -68,6 +72,10 @@ h1{
   border-bottom: 5px solid rgba(255, 0, 0, 0) !important;
 }
 
+.form-control:focus{
+  box-shadow: 0px 0px 6px 1px green  !important;
+  border: none !important;
+}
 /* 
 option:hover{
   background-color: green !important;   <---- tratar de hacer que funcione

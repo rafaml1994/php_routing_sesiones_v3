@@ -14,16 +14,21 @@
             <tbody>
                 <?php
                 $conexion = Connect::getConnection();
-                $comprobar = $conexion->query("select idalumno from alumnos order by idalumno asc;");
+                $comprobar = $conexion->query("select idalumno,dni from alumnos order by idalumno asc;");
                 $comprobar2 = $conexion->query("select idalumno from calificar order by idalumno asc;");
+                $i = 0;
                 foreach ($comprobar->fetchAll() as $row2) {
                     $idAlumno[] = $row2[0];
+                    //var_dump($_COOKIE[$idAlumno[$i]]);
+                    $dni[$i] = $row2[1];
+                    $i++;
                 }
 
                 $idCalificar[0] = 0;
                 foreach ($comprobar2->fetchAll() as $row1) {
                     $idCalificar[] = $row1[0];
                 }
+
 
                 $resultado = array_diff($idAlumno, $idCalificar);
 
@@ -33,16 +38,18 @@
                 }
 
                 //iniciar muestro de datos :
-
                 $tabla = $conexion->query("select alumnos.idalumno,alumnos.usuario,calificar.usabilidad,calificar.codigo,calificar.total from alumnos inner join calificar on alumnos.idalumno = calificar.idalumno order by alumnos.idalumno asc;");
                 foreach ($tabla->fetchAll() as $fila) {
                     if ($_SESSION['nombre'] !== $fila[1]) {
-                        echo "<tr style='text-align: center'><th scope='row'>" . $fila[0] . "</th>";
-                        echo "<td>" . $fila[1] . "</td>";
-                        echo "<td>" . $fila[2] . "</td>";
-                        echo "<td>" . $fila[3] . "</td>";
-                        echo "<td>" . $fila[4] . "</td>";
-                        echo "<td style='text-align: center;'><a class='btn btn-primary' href='?controller=alumno&action=calificar&id=" . $fila[0] . "'>Puntuar</a></td>";
+                        $recuperar = $_COOKIE[$fila[0]];
+                        if ($recuperar != $fila[0]) {
+                            echo "<tr style='text-align: center'><th scope='row'>" . $fila[0] . "</th>";
+                            echo "<td>" . $fila[1] . "</td>";
+                            echo "<td>" . $fila[2] . "</td>";
+                            echo "<td>" . $fila[3] . "</td>";
+                            echo "<td>" . $fila[4] . "</td>";
+                            echo "<td style='text-align: center;'><a class='btn btn-primary'href='?controller=alumno&action=calificar&id=" . $fila[0] . "&count=" . $z . "'>Puntuar</a></td>";
+                        }
                     }
                 }
                 ?>
