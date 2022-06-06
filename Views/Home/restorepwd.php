@@ -1,6 +1,5 @@
 <?
-
-//require_once('connection.php');
+require_once('connection.php');
 $conexion = Connect::getConnection();
 $contraseña = $_POST['pass'];
 $rpass = $_POST['rpass'];
