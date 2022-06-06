@@ -156,6 +156,7 @@ option:hover{
   }
   .video-container{
     left:0 !important;
+    top:45%;
   }
   .video{
     display: none;
