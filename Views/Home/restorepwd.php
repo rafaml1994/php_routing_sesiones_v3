@@ -38,3 +38,4 @@ if ($ok === true) {
     setcookie('error', 1, time() + 10000, '/'); //generar mensaje de cookie error con no existe el DNI
     header('Location: ?controller=home&action=restore');
 }
+ob_end_flush();
