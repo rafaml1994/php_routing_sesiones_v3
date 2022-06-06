@@ -9,11 +9,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <?php if ($_SESSION['nombre']) { ?>
         <ul class="navbar-nav mb-2 mb-lg-0" style="width:100%">
-          <li class="nav-item" style=" margin-left:44% ">
+          <li class="nav-item" style=" margin-left:40% ">
             <a class="nav-link active" aria-current="page" href="?controller=alumno&action=index">Inicio</a>
           </li>
-          <li class="nav-item" style=" margin-right:35% ">
+          <li class="nav-item">
             <a class="nav-link active link" href="?controller=alumno&action=show">Consultar mi grupo</a>
+          </li>
+          <li class="nav-item" style=" margin-right:28% ">
+            <a class="nav-link active link" href="?controller=alumno&action=calificaciones">Calificar compañero</a>
           </li>
           <li class="nav-item" style="border-bottom: 5px solid rgba(255, 0, 0, 0) !important;">
             <a class=" btn btn-outline-success" style="color:white !important;" href="?controller=alumno&&action=logout">Cerrar sesion</a>

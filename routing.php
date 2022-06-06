@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
 }
 $controllers = array(
 	'profesor' => ['index', 'register', 'save', 'show', 'updateshow', 'update', 'delete', 'sesion', 'error', 'logout', 'aleatorio', 'borrarAlea'],
-	'alumno' => ['index', 'register', 'save', 'show', 'updateshow', 'update', 'delete', 'sesion', 'error', 'logout'],
+	'alumno' => ['index', 'show', 'calificar', 'calificaciones', 'logout'],
 	'home' => ['index', 'sesion', 'login', 'error', 'restore', 'restorepwd']
 );
 
@@ -12,7 +12,7 @@ if (array_key_exists($controller,  $controllers)) {
 	if (in_array($action, $controllers[$controller])) {
 
 		//Aqui debemos redireccionar al usuario según sus credenciales para que pueda acceder a unas actions o a otras.
-		if ($_SESSION['nombre'] && $controller == 'alumno' && ($action == 'index' || $action == 'register' || $action == 'save' || $action == 'show' || $action == 'updateshow' || $action == 'update' || $action == 'delete' || $action == 'sesion' || $action == 'error' || $action == 'logout')) {
+		if ($_SESSION['nombre'] && $controller == 'alumno' && ($action == 'index' || $action == 'show' || $action == 'logout' || $action == 'calificaciones' || $action == 'calificar')) {
 			call($controller, $action);
 		} elseif ($_SESSION['rol'] === true && $controller == 'profesor' && ($action == 'index' || $action == 'register' || $action == 'save' || $action == 'show' || $action == 'updateshow' || $action == 'update' || $action == 'delete' || $action == 'sesion' || $action == 'error' || $action == 'logout' || $action == 'aleatorio' || $action == 'borrarAlea')) {
 			call($controller, $action);
