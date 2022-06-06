@@ -19,8 +19,10 @@ if (array_key_exists($controller,  $controllers)) {
 		} elseif ($controller == 'home' && ($action == 'index' || $action == 'sesion' || $action == 'login' || $action == 'error' || $action == 'restore' || $action == 'restorepwd')) {
 			if ($_SESSION['rol'] === true) {
 				$controller = "profesor";
+				call($controller, 'index');
 			} elseif ($_SESSION['nombre']) {
 				$controller = "alumno";
+				call($controller, 'index');
 			} else {
 				call($controller, $action);
 			}

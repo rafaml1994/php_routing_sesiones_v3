@@ -174,7 +174,7 @@ option:hover{
     background-color: inherit;
   }
   tr td:first-child {
-    background: #f0f0f0;
+    background: #000000;
     font-weight:bold;
     font-size:1.3em;
   }
