@@ -59,6 +59,6 @@ if (isset($_POST['enviar'])) {
 
     $insert->execute();
     setcookie($id, $id, time() + 10000000000, '/');
-    //header('Location: index.php?controller=alumno&action=calificaciones');
+    header('Location: index.php?controller=alumno&action=calificaciones');
 }
 ?>
