@@ -57,6 +57,7 @@
         </table>
     </div>
 </div>
+<!-- BUSCAR UN BUEN CONETENEDOR PARA PONER AQUI -->
 <div class="container mt-5" style="width: 50%;">
     <div class="container shadow-lg p-4 mb-5 tabla">
         <table class="table">
@@ -77,7 +78,6 @@
                 $tabla2 = $conexion->query("select alumnos.idalumno,alumnos.usuario,calificar.usabilidad,calificar.codigo,calificar.total from alumnos inner join calificar on alumnos.idalumno = calificar.idalumno order by alumnos.idalumno asc;");
                 foreach ($tabla2->fetchAll() as $fila) {
                     if ($_SESSION['nombre'] === $fila[1]) {
-
                         echo "<tr style='text-align: center'><th scope='row'>" . $fila[0] . "</th>";
                         echo "<td>" . $fila[1] . "</td>";
                         echo "<td>" . $fila[2] . "</td>";
