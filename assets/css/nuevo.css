@@ -181,6 +181,9 @@ option:hover{
     display: block;
     text-align:center !important;
   }
+  .restore{
+    display: none;
+  }
 }
 
 @media (max-width:1650px) {
