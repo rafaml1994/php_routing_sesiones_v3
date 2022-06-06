@@ -2,8 +2,6 @@
     <div class="waves w1"></div>
     <div class="waves w2"></div>
 </div>
-
-
 <div class="container video-container">
     <h1 class=" text-center pt-3 text-dark">Bienvenido <?php echo ucfirst($_SESSION['nombre']) ?>!</h1>
     <h3 class="text-center">¡En esta app vas a poder ver tus grupos de una manera muy rápida!</h3>

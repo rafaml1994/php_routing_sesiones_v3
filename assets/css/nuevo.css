@@ -139,7 +139,6 @@ option:hover{
 @media (max-width: 700px) {
   .nav-item:hover {
     border-bottom: 5px solid rgba(255, 0, 0, 0) !important;
-
   }
   .navbar-nav{
     padding: 0;
@@ -156,10 +155,31 @@ option:hover{
     width:60%;
   }
   .video-container{
-    left:0;
+    left:0 !important;
   }
   .video{
     display: none;
+  }
+  .tabla{
+    left: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .table>thead{
+    margin-left: -15%;
+    display: none;
+  }
+  tr:nth-of-type(2n) {
+    background-color: inherit;
+  }
+  tr td:first-child {
+    background: #f0f0f0;
+    font-weight:bold;
+    font-size:1.3em;
+  }
+  tbody td {
+    display: block;
+    text-align:center !important;
   }
 }
 

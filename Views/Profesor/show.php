@@ -13,7 +13,7 @@
   unset($_SESSION['mensaje']);
   unset($_SESSION['mensajeW']);
   ?>
-  <div class="container shadow-lg p-4 mb-5">
+  <div class="container shadow-lg p-4 mb-5 tabla">
     <table class="table">
       <thead style="color:white; background-color: #060606">
         <tr style="text-align:center">
