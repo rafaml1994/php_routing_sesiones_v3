@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once('connection.php');
 $conexion = Connect::getConnection();
 $resultado = $conexion->query("select dni from alumnos");
