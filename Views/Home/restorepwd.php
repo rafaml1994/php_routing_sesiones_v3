@@ -1,12 +1,12 @@
 <?
 require_once('connection.php');
 $conexion = Connect::getConnection();
+$resultado = $conexion->query("select dni from alumnos");
+$resultado->execute();
+
 $contraseña = $_POST['pass'];
 $rpass = $_POST['rpass'];
 $dni = $_POST['dni'];
-
-$resultado = $conexion->query("select dni from alumnos");
-$resultado->execute();
 
 foreach ($resultado->fetchAll() as $fila) {
     $controlDni = $fila[0];
