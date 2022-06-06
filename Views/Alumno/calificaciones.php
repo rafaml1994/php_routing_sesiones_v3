@@ -48,8 +48,41 @@
                             echo "<td>" . $fila[2] . "</td>";
                             echo "<td>" . $fila[3] . "</td>";
                             echo "<td>" . $fila[4] . "</td>";
-                            echo "<td style='text-align: center;'><a class='btn btn-primary'href='?controller=alumno&action=calificar&id=" . $fila[0] . "&count=" . $z . "'>Puntuar</a></td>";
+                            echo "<td style='text-align: center;'><a class='btn btn-primary'href='?controller=alumno&action=calificar&id=" . $fila[0] . "'>Puntuar</a></td>";
                         }
+                    }
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container mt-5" style="width: 50%;">
+    <div class="container shadow-lg p-4 mb-5 tabla">
+        <table class="table">
+            <thead style="color:white; background-color: #060606">
+                <tr style="text-align:center">
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Usabilidad</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $conexion = Connect::getConnection();
+
+                $tabla2 = $conexion->query("select alumnos.idalumno,alumnos.usuario,calificar.usabilidad,calificar.codigo,calificar.total from alumnos inner join calificar on alumnos.idalumno = calificar.idalumno order by alumnos.idalumno asc;");
+                foreach ($tabla2->fetchAll() as $fila) {
+                    if ($_SESSION['nombre'] === $fila[1]) {
+
+                        echo "<tr style='text-align: center'><th scope='row'>" . $fila[0] . "</th>";
+                        echo "<td>" . $fila[1] . "</td>";
+                        echo "<td>" . $fila[2] . "</td>";
+                        echo "<td>" . $fila[3] . "</td>";
+                        echo "<td>" . $fila[4] . "</td>";
                     }
                 }
                 ?>
