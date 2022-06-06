@@ -30,7 +30,7 @@ if ($ok === true) {
 
         setcookie('update', 1, time() + 10000, '/'); //poner el path para usar la cookie en distintos directorios
 
-        header('Location: ?controller=home&action=sesion');
+        require_once('sesion.php');
     } else {
         setcookie('noupdate', 1, time() + 10000, '/'); //generar mensaje de cookie error con "no coinciden las contraseñas" 
         header('Location: ?controller=home&action=restore');
