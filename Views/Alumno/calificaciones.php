@@ -32,9 +32,11 @@
                     $insert->execute();
                 }
 
+                //iniciar muestro de datos :
+
                 $tabla = $conexion->query("select alumnos.idalumno,alumnos.usuario,calificar.usabilidad,calificar.codigo,calificar.total from alumnos inner join calificar on alumnos.idalumno = calificar.idalumno order by alumnos.idalumno asc;");
                 foreach ($tabla->fetchAll() as $fila) {
-                    if ($_SESSION['nombre'] !== $fila[2]) {
+                    if ($_SESSION['nombre'] !== $fila[1]) {
                         echo "<tr style='text-align: center'><th scope='row'>" . $fila[0] . "</th>";
                         echo "<td>" . $fila[1] . "</td>";
                         echo "<td>" . $fila[2] . "</td>";
