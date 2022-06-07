@@ -14,6 +14,9 @@ $resultado2 = $conexion->query("select*from alumnos where usuario ='$usuario'");
 foreach ($resultado->fetchAll() as $fila) {
     $_SESSION['id'] = $fila[0];
     $_SESSION['usuario'] = $fila[1];
+    if ($_SESSION['usuario'] === $usuario) {
+        $nom = true;
+    }
     $_SESSION['contraseña'] = $fila[2];
     if ($_SESSION['contraseña'] === $contraseña) {
         $pass = true;
@@ -29,9 +32,10 @@ foreach ($resultado2->fetchAll() as $falumno) {
     }
 }
 if (isset($_SESSION) && $_SESSION['usuario'] === $usuario && $_SESSION['rol'] === true) {
-    if ($pass === true) {
+    if ($pass === true && $nom === true) {
         $_SESSION['iniciada'] = true;
         $_SESSION['grupos'] = 0;
+        $_SESSION['usuario'] = $usuario;
         header('Location: ?controller=profesor&&action=index');
     } else {
         session_destroy();

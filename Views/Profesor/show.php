@@ -86,4 +86,28 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 25%, rgba(26,255,0,1) 100%, rgb
     </tbody>
     </table>
   </div>
+  <div class="container">
+    <h3 class="text-center">Aquí podrás establecer un tiempo para la votación de los alumnos</h3>
+    <h4 class="text-center">Recuerda que el tiempo debe estar en minutos</h4>
+    <div class="container col-3">
+      <form action="?controller=profesor&action=show" method="POST">
+        <div class="mb-3">
+          <label for="cookie" class="form-label mb-2 pt-3" style="font-weight: bold;">Establecer tiempo :</label>
+          <input type="number" class="form-control" id="cookie" max="3600" min="0" placeholder="*Tiempo en minutos" name="cookie">
+        </div>
+        <div class="container col-5">
+          <button type="submit" class="btn btn-primary mb-5" style="width:100%;">Establecer</button>
+        </div>
+      </form>
+      <?php
+      $profesor = $_SESSION['usuario'];
+      $c = $_POST['cookie'];
+      $conexion = Connect::getConnection();
+      $insert = $conexion->prepare('UPDATE profesores SET cookies=:c WHERE usuario=:p');
+      $insert->bindValue(':c', $c);
+      $insert->bindValue(':p', $profesor);
+      $insert->execute();
+      ?>
+    </div>
+  </div>
 </div>

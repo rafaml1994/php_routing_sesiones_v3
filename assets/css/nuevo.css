@@ -15,7 +15,6 @@
   background: #ece9e900;
   text-align: center;
 }
-/* Body */
 
 /* Menu de navegación */
 .nav-link{
@@ -216,7 +215,16 @@ option:hover{
 .video{
   top: 10%;
 }
+
+/* cookies */
+.cookie{
+  width: 100%;
+  left: 40% !important;
+}
+
+
 /* MEDIA QUERIES*/
+
 
 @media (max-width: 700px) {
   .nav-item:hover {

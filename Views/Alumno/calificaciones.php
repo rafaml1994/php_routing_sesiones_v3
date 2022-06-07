@@ -46,9 +46,17 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 4%, rgba(0,128,0,1) 10%)
 
                 //iniciar muestro de datos :
                 $tabla = $conexion->query("select alumnos.idalumno,alumnos.usuario,calificar.usabilidad,calificar.codigo,calificar.total from alumnos inner join calificar on alumnos.idalumno = calificar.idalumno order by alumnos.idalumno asc;");
+                $buscar = $conexion->query("select cookies from profesores where usuario = 'carmelo'");
+                foreach ($buscar->fetchAll() as $profesorCookie) {
+                    $c = $profesorCookie[0];
+                }
                 foreach ($tabla->fetchAll() as $fila) {
                     if ($_SESSION['nombre'] !== $fila[1]) {
                         $recuperar = $_COOKIE[$fila[0]];
+                        if ($c === 0) {
+                            setcookie($fila[0], $recuperar, time() + 0, '/');
+                            $recuperar = "";
+                        }
                         if ($recuperar != $fila[0]) {
                             echo "<tr style='text-align: center;'><th scope='row'>" . $fila[0] . "</th>";
                             echo "<td>" . $fila[1] . "</td>";

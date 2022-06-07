@@ -25,7 +25,7 @@ if ($contraseña === $repetir && !empty($contraseña) && $error !== true && $err
 
     $p = new Profesor('1', 'carmelo', 'admin', '1');
     $validar = $p->dni($dni);
-    var_dump($validar);
+
     if ($validar === true) {
         $dni = strtoupper($dni);
         //Insertamos usuario en caso de que no exista y se hayan cumplido el resto de condiciones.
@@ -40,7 +40,6 @@ if ($contraseña === $repetir && !empty($contraseña) && $error !== true && $err
         require_once('aleatorio.php');
 
         //header('Location: index.php?controller=profesor&action=show');
-
     } else {
         $_SESSION['mensajeW'] = "Formato DNI incorrecto o campo vacío";
         require_once('register.php');
