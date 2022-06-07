@@ -20,10 +20,10 @@
                 }
                 foreach ($coincidir->fetchAll() as $fila2) {
                     if ($grupo === $fila2[1]) {
-                        echo "<tr class='text-center bg-success'><td class='text-center'scope='row'><strong>" . $fila2[1] . "</strong></td>
-                            <td class='text-center'><strong>" . strtoupper($fila2[0]) . "</strong></td></tr>";
+                        echo "<tr class='text-center tr-transform'><td class='text-center text-white'scope='row'><strong>" . $fila2[1] . "</strong></td>
+                            <td class='text-center '><strong>" . strtoupper($fila2[0]) . "</strong></td></tr>";
                     } else {
-                        echo "<tr><td class='text-center'scope='row'>" . $fila2[1] . "</td>";
+                        echo "<tr><td class='text-center 'scope='row'>" . $fila2[1] . "</td>";
                         echo "<td class='text-center'>" . strtoupper($fila2[0]) . "</td></tr>";
                     }
                 }

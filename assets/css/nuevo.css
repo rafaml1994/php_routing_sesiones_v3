@@ -148,7 +148,10 @@ option:hover{
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-
+.tr-transform{
+  background: rgb(0,0,0);
+  background: linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(31,207,22,1) 100%);
+}
 
 /* Contenedores */
 .container1{
