@@ -3,6 +3,7 @@
         <div class="waves w1"></div>
         <div class="waves w2"></div>
     </div>
+    <div style="background-color:#008000;"></div>
 </div>
 <div class="container mt-5 containerMb">
     <div class="container shadow-lg rounded tabla">
@@ -84,6 +85,7 @@
         ?>
         <a class="btn btn-primary mt-4" href="?controller=alumno&action=calificacion">Refrescar</a>
     </div>
+
 </div>
-<div style="background-color:#008000 ;"></div>
+
 <!-- BUSCAR UN BUEN CONETENEDOR PARA PONER AQUI -->
