@@ -2,8 +2,8 @@
     <div class="bg_color">
         <div class="waves w1"></div>
         <div class="waves w2"></div>
+        <div style="background-color:#008000; height:255%"></div>
     </div>
-    <div style="background-color:#008000;"></div>
 </div>
 <div class="container mt-5 containerMb">
     <div class="container shadow-lg rounded tabla">
