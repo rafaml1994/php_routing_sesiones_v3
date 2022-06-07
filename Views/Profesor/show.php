@@ -88,7 +88,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 25%, rgba(26,255,0,1) 100%, rgb
   </div>
   <div class="container">
     <h3 class="text-center">Aquí podrás establecer un tiempo para la votación de los alumnos</h3>
-    <h4 class="text-center">Recuerda que el tiempo debe estar en minutos</h4>
+    <h4 class="text-center">Recuerda que el tiempo debe estar en minutos, en caso de que quieras reiniciar la votación establece el tiempo en 0</h4>
     <div class="container col-3">
       <form action="?controller=profesor&action=show" method="POST">
         <div class="mb-3">
