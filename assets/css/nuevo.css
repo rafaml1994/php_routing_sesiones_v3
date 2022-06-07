@@ -15,6 +15,7 @@
   background: #ece9e900;
   text-align: center;
 }
+/* Body */
 
 /* Menu de navegación */
 .nav-link{
@@ -63,7 +64,11 @@
   background-color: green;
   border-color: green;
 }
-
+.btn-inicio{
+  margin-top:35%;
+  text-align: center;
+  width: 60%;
+}
 #probar{
   border-bottom: 5px solid rgba(255, 0, 0, 0) !important;
 }
@@ -135,6 +140,9 @@ option:hover{
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.lbl{
+  font-weight: bold;
+}
 /* Tablas */
 .tabla{
   position: absolute !important;
@@ -184,6 +192,11 @@ option:hover{
   box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.37);
   color: white;
 }
+.containerP{
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(31,207,22,1) 100%);
+}
+
 /* video*/
 
 .video:hover {

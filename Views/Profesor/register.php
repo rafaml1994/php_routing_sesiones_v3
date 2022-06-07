@@ -4,7 +4,7 @@
     <div class="waves w2"></div>
   </div>
 </div>
-<div class="container shadow-lg rounded col-md-3 mt-5 login" style=" background-color:#FFFFFF; border-radius: 7px; ">
+<div class="container shadow-lg rounded col-md-3 mt-5 login" style="border-radius: 7px; ">
   <div class="mx-auto mt-md-5 col-md-5 pb-mb-5 ">
     <form action="?controller=profesor&action=save" method="POST">
       <div class="mb-3">
@@ -13,7 +13,7 @@
       </div>
       <div class="mb-3">
         <div class="mb-3">
-          <label for="dni" class="form-label" style="font-weight: bold;">Usuario del alumno :</label>
+          <label for="dni" class="form-label" style="font-weight: bold;">DNI del alumno :</label>
           <input type="text" class="form-control mb-4" id="dni" aria-describedby="Nombre" placeholder="Ej. 11111111A" name="dni">
         </div>
         <label for="contraseña" class="form-label mb-4" style="font-weight: bold;">Contraseña del alumno :</label>

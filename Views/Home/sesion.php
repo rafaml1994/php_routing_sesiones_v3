@@ -4,7 +4,7 @@
         <div class="waves w2"></div>
     </div>
 </div>
-<div class="container shadow-lg rounded col-md-3 mt-5 mb-3 login" style=" background-color:#FFFFFF; border-radius: 7px; ">
+<div class="container shadow-lg rounded col-md-3 mt-5 mb-3 login" style="border-radius: 7px; ">
     <?php
     if (isset($_COOKIE['update'])) {
         echo "<div class='alert alert-success mt-5'>";

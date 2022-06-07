@@ -1,4 +1,4 @@
-<div style="background-color: #909090;">
+<div class="containerP">
     <div class="container vh-100" style=" background-color:#FFFFFF;">
         <h1 class=" text-center pt-2">Bienvenido <?php echo ucfirst($_SESSION['usuario']) ?>!</h1>
         <h3 class="text-center">En esta app vas a poder gestionar a tus alumnos de una manera rápida y sencilla.</h3>
