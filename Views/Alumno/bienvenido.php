@@ -2,7 +2,7 @@
     <div class="waves w1"></div>
     <div class="waves w2"></div>
 </div>
-<div class="container video-container">
+<div class="container">
     <h1 class=" text-center pt-3 text-dark">Bienvenido <?php echo ucfirst($_SESSION['nombre']) ?>!</h1>
     <h3 class="text-center">¡En esta app vas a poder ver tus grupos de una manera muy rápida!</h3>
     <div class=" m-0 row justify-content-center " style="justify-content: space-between;background-color:trnasparent">
@@ -16,11 +16,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-5 m-0 mt-5 row justify-content-center rounded video" style=" position:relative; left:5%;">
-            <div class="video">
-                <video src="assets/videos/video.mp4" autoplay loop muted>
-                    <source type="video/mp4">
-                </video>
+        <div class="col-sm-5 m-0 mt-5 row justify-content-center" style=" position:relative; left:5%;">
+            <div class="video-container">
+                <div class="video">
+                    <video src="assets/videos/video.mp4" autoplay loop muted>
+                        <source type="video/mp4">
+                    </video>
+                </div>
             </div>
         </div>
     </div>

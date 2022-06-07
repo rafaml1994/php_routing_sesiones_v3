@@ -6,9 +6,6 @@
   background-repeat: no-repeat;
 }
 /* titulo */
-h1{
-  color: white;
-}
 
 #demotext {
   color: #FFFFFF;
@@ -46,7 +43,12 @@ h1{
   padding: 0;
 
 }
+.navbar-collapse{
+  padding:0 !important;
+  bottom: 0 !important;
 
+}
+/* Btonoes */
 .btn{
   background-color: green;
   border-color: green;
@@ -62,16 +64,9 @@ h1{
   border-color: green;
 }
 
-.navbar-collapse{
-  padding:0 !important;
-  bottom: 0 !important;
-
-}
-
 #probar{
   border-bottom: 5px solid rgba(255, 0, 0, 0) !important;
 }
-
 .form-control:focus{
   box-shadow: 0px 0px 6px 1px green  !important;
   border: none !important;
@@ -133,15 +128,70 @@ option:hover{
 .login{
   position: absolute;
   left: 38%;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-/* video*/
-.video-container{
-  position: absolute;
-  left: 15%;
-  border-radius: 5px;
-  background-color: #47474700;
+/* Tablas */
+.tabla{
+  position: absolute !important;
+  left: 8%;
+  top: 40%;
+  width: 40%;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+
+/* Contenedores */
+.container1{
+  position: absolute !important;
+  left: 65%;
+  top: 52%;
+  width:15%;
+  height: 20%;
+  border-radius:10px;
+  text-align: center;
+
+  /* glass*/
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.container2{
+  position: absolute !important;
+  left: -8%;
+  top: -50%;
+  width:115%;
+  height: 60%;
+  border-radius: 5px;
+  text-align: center;
+  background: rgb(0,0,0);
+  background: linear-gradient(145deg, rgba(0,0,0,1) 0%, rgba(31,207,22,1) 100%);
+  box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.37);
+  color: white;
+}
+/* video*/
+
+.video:hover {
+  top: 20%;
+  margin-left: -71%;
+  margin-right: 90%;
+  -webkit-transform:scale(1.8);transform:scale(1.8)
+}
+.video{
+  top: 10%;
+}
 /* MEDIA QUERIES*/
 
 @media (max-width: 700px) {
@@ -177,6 +227,7 @@ option:hover{
   .table>thead{
     margin-left: -15%;
     display: none;
+    
   }
   tr:nth-of-type(2n) {
     background-color: inherit;
@@ -185,6 +236,7 @@ option:hover{
     background: #000000;
     font-weight:bold;
     font-size:1.3em;
+    color: white;
   }
   tbody td {
     display: block;

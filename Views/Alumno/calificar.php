@@ -4,7 +4,7 @@
         <div class="waves w2"></div>
     </div>
 </div>
-<div class="container shadow-lg rounded col-md-3 mt-5 login" style=" background-color:#FFFFFF; border-radius: 7px; ">
+<div class="container shadow-lg rounded col-md-3 mt-5 login">
     <div class="mx-auto mt-md-5 col-md-5 pb-mb-5 ">
         <form action="?controller=alumno&action=calificar&id=<?php echo $_GET['id'] ?>" method="POST">
             <div class="mb-3">
