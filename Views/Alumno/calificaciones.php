@@ -1,8 +1,8 @@
-<div class="container">
+<div style="height: 250vh; background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 4%, rgba(0,128,0,1) 10%);">
     <div class="bg_color">
         <div class="waves w1"></div>
         <div class="waves w2"></div>
-        <div style="background-color:#008000; height:255%"></div>
     </div>
 </div>
 <div class="container mt-5 containerMb">
