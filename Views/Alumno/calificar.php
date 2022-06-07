@@ -1,3 +1,9 @@
+<?php
+$no = $_GET['no'];
+if ($no === 1) {
+    header('Location: index.php?controller=alumno&action=calificaciones');
+}
+?>
 <div class="container">
     <div class="bg_color">
         <div class="waves w1"></div>
@@ -18,12 +24,14 @@
             <button type="submit" class="btn btn-primary mb-5" name="enviar" onclick="alerta()" style="width:100%;">Puntuar</button>
         </form>
     </div>
+    <?php echo $no; ?>
 </div>
 <?php
 
 //iniciar calificaciones :
 
 if (isset($_POST['enviar'])) {
+
     $conexion = Connect::getConnection();
 
     $usabilidad = $_POST['usabilidad'];
@@ -58,6 +66,7 @@ if (isset($_POST['enviar'])) {
     $resultado1 = ($usabilidad + $u) / $votar;
     $resultado2 = ($codigo + $c) / $votar;
     $resultado3 = ($total + $t) / $votar;
+
     setcookie($id, $id, $cookie, '/');
 
     $insert = $conexion->prepare('UPDATE calificar SET usabilidad=:u, codigo=:c, total=:t,votar=:v WHERE idalumno=' . $id);

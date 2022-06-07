@@ -51,21 +51,32 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 4%, rgba(0,128,0,1) 10%)
                     $c = $profesorCookie[0];
                 }
                 foreach ($tabla->fetchAll() as $fila) {
-                    if ($_SESSION['nombre'] !== $fila[1]) {
-                        $borrarNotas = $fila[0];
-                        $recuperar = $_COOKIE[$fila[0]];
-                        if ($c === 0) {
-                            setcookie($fila[0], $recuperar, time() + 0, '/');
-                            $recuperar = "";
-                            $borrar = $insert = $conexion->prepare('UPDATE calificar SET usabilidad=:u, codigo=:c, total=:t,votar=:v WHERE idalumno=' . $borrarNotas);
-                            $insert->bindValue(':u', 0);
-                            $insert->bindValue(':c', 0);
-                            $insert->bindValue(':t', 0);
-                            $insert->bindValue(':v', 0);
+                    $borrarnotas = $fila[0];
+                    $recuperar = $_COOKIE[$fila[0]];
+                    if ($c === 0) {
+                        setcookie($borrarnotas, $recuperar, time() + 0, '/');
+                        $recuperar = "";
+                        $borrar = $conexion->prepare('UPDATE calificar SET usabilidad=:u, codigo=:c, total=:t,votar=:v WHERE idalumno=' . $borrarnotas);
+                        $borrar->bindValue(':u', 0);
+                        $borrar->bindValue(':c', 0);
+                        $borrar->bindValue(':t', 0);
+                        $borrar->bindValue(':v', 0);
 
-                            $insert->execute();
-                        }
-                        if ($recuperar != $fila[0]) {
+                        $borrar->execute();
+                        $no = 1;
+                    }
+                    if ($_SESSION['nombre'] !== $fila[1]) {
+
+                        if ($recuperar != $fila[0] && $no === 1) {
+                            echo "<tr style='text-align: center;'><th scope='row'>" . $fila[0] . "</th>";
+                            echo "<td>" . $fila[1] . "</td>";
+                            echo "<td>" . round($fila[2], 1) . "</td>";
+                            echo "<td>" . round($fila[3], 1) . "</td>";
+                            echo "<td>" . round($fila[4], 1) . "</td>";
+                            //echo "<td style='text-align: center;'><a class='btn btn-primary'href='?controller=alumno&action=calificar&id=" . $fila[0] . "'>Puntuar</a></td>";
+
+                        } elseif ($recuperar != $fila[0]) {
+
                             echo "<tr style='text-align: center;'><th scope='row'>" . $fila[0] . "</th>";
                             echo "<td>" . $fila[1] . "</td>";
                             echo "<td>" . round($fila[2], 1) . "</td>";

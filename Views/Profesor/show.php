@@ -96,17 +96,21 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 25%, rgba(26,255,0,1) 100%, rgb
           <input type="number" class="form-control" id="cookie" max="3600" min="0" placeholder="*Tiempo en minutos" name="cookie">
         </div>
         <div class="container col-5">
-          <button type="submit" class="btn btn-primary mb-5" style="width:100%;">Establecer</button>
+          <button type="submit" class="btn btn-primary mb-5" name="enviar" style="width:100%;">Establecer</button>
         </div>
       </form>
       <?php
       $profesor = $_SESSION['usuario'];
       $c = $_POST['cookie'];
-      $conexion = Connect::getConnection();
-      $insert = $conexion->prepare('UPDATE profesores SET cookies=:c WHERE usuario=:p');
-      $insert->bindValue(':c', $c);
-      $insert->bindValue(':p', $profesor);
-      $insert->execute();
+      if (isset($_POST['enviar'])) {
+        $conexion = Connect::getConnection();
+        $insert = $conexion->prepare('UPDATE profesores SET cookies=:c WHERE usuario=:p');
+        $insert->bindValue(':c', $c);
+        $insert->bindValue(':p', $profesor);
+        $insert->execute();
+        //var_dump($insert->execute());
+      }
+
       ?>
     </div>
   </div>
