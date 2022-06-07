@@ -52,10 +52,18 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 4%, rgba(0,128,0,1) 10%)
                 }
                 foreach ($tabla->fetchAll() as $fila) {
                     if ($_SESSION['nombre'] !== $fila[1]) {
+                        $borrarNotas = $fila[0];
                         $recuperar = $_COOKIE[$fila[0]];
                         if ($c === 0) {
                             setcookie($fila[0], $recuperar, time() + 0, '/');
                             $recuperar = "";
+                            $borrar = $insert = $conexion->prepare('UPDATE calificar SET usabilidad=:u, codigo=:c, total=:t,votar=:v WHERE idalumno=' . $borrarNotas);
+                            $insert->bindValue(':u', 0);
+                            $insert->bindValue(':c', 0);
+                            $insert->bindValue(':t', 0);
+                            $insert->bindValue(':v', 0);
+
+                            $insert->execute();
                         }
                         if ($recuperar != $fila[0]) {
                             echo "<tr style='text-align: center;'><th scope='row'>" . $fila[0] . "</th>";
