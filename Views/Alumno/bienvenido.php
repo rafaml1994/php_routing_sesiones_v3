@@ -1,4 +1,4 @@
-<div class="bg_color" style="height: 100vh;">
+<div class="bg_color">
     <div class="waves w1"></div>
     <div class="waves w2"></div>
 </div>
