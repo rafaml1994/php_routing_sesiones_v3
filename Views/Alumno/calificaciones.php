@@ -83,7 +83,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 4%, rgba(0,128,0,1) 10%)
         echo "<h1>" . round($miTotal, 1) . "</h1>";
         echo "</div>";
         ?>
-        <a class="btn btn-primary mt-4" href="?controller=alumno&action=calificacion">Refrescar</a>
+        <a class="btn btn-primary mt-4" href="?controller=alumno&action=calificaciones">Refrescar</a>
     </div>
 
 </div>
