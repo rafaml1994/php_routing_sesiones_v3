@@ -192,11 +192,19 @@ option:hover{
   box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.37);
   color: white;
 }
+.containerMb{
+  width: 50%;
+}
 .containerP{
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(31,207,22,1) 100%);
 }
-
+.containerAl>h1{
+  margin-left:25%;
+}
+.containerAl>h3{
+  margin-left:25%;
+}
 /* video*/
 
 .video:hover {
@@ -240,10 +248,14 @@ option:hover{
     padding: 0;
     margin: 0;
   }
+  .containerMb{
+    position:relative;
+    left: 10%;  
+    width: 200% !important;
+  }
   .table>thead{
     margin-left: -15%;
     display: none;
-    
   }
   tr:nth-of-type(2n) {
     background-color: inherit;
@@ -251,7 +263,7 @@ option:hover{
   tr td:first-child {
     background: #000000;
     font-weight:bold;
-    font-size:1.3em;
+    font-size:1.5em;
     color: white;
   }
   tbody td {
@@ -261,6 +273,21 @@ option:hover{
   .restore{
     display: none;
   }
+
+  .containerAl>h1{
+    margin-left: 0;
+
+  }
+  .containerAl>h3{
+    margin-left: 0;
+    font-size: medium;
+
+  }
+  .container1{
+    display: none;
+  }
+  
+  
 }
 
 @media (max-width:1650px) {

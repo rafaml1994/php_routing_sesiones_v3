@@ -40,25 +40,29 @@ if (isset($_POST['enviar'])) {
     $id = $_GET['id'];
     $total = (($usabilidad + $codigo) / 2);
 
-    $calificar = $conexion->query("select usabilidad,codigo,total from calificar where idalumno = '$id';");
+    $calificar = $conexion->query("select usabilidad,codigo,total,votar from calificar where idalumno = '$id';");
     foreach ($calificar->fetchAll() as  $fila) {
         $u = $fila[0];
         $c = $fila[1];
         $t = $fila[2];
+        $v = $fila[3];
     }
 
-    $resultado1 = $usabilidad + $u;
-    $resultado2 = $codigo + $c;
-    $resultado3 = $total + $t;
+    $votar = $v + 1;
+
+    $resultado1 = ($usabilidad + $u) / $votar;
+    $resultado2 = ($codigo + $c) / $votar;
+    $resultado3 = ($total + $t) / $votar;
 
 
-    $insert = $conexion->prepare('UPDATE calificar SET usabilidad=:u, codigo=:c, total=:t WHERE idalumno=' . $id);
+    $insert = $conexion->prepare('UPDATE calificar SET usabilidad=:u, codigo=:c, total=:t,votar=:v WHERE idalumno=' . $id);
     $insert->bindValue(':u', $resultado1);
     $insert->bindValue(':c', $resultado2);
     $insert->bindValue(':t', $resultado3);
+    $insert->bindValue(':v', $votar);
 
     $insert->execute();
-    setcookie($id, $id, time() + 10000000000, '/');
+    //setcookie($id, $id, time() + 10000000000, '/');
     header('Location: index.php?controller=alumno&action=calificaciones');
 }
 ?>

@@ -4,7 +4,7 @@
         <div class="waves w2"></div>
     </div>
 </div>
-<div class="container mt-5" style="width: 50%;">
+<div class="container mt-5 containerMb">
     <div class="container shadow-lg rounded tabla">
         <table class="table">
             <thead style="color:white; background-color: #060606">
@@ -51,9 +51,9 @@
                         if ($recuperar != $fila[0]) {
                             echo "<tr style='text-align: center;'><th scope='row'>" . $fila[0] . "</th>";
                             echo "<td>" . $fila[1] . "</td>";
-                            echo "<td>" . $fila[2] . "</td>";
-                            echo "<td>" . $fila[3] . "</td>";
-                            echo "<td>" . $fila[4] . "</td>";
+                            echo "<td>" . round($fila[2], 1) . "</td>";
+                            echo "<td>" . round($fila[3], 1) . "</td>";
+                            echo "<td>" . round($fila[4], 1) . "</td>";
                             echo "<td style='text-align: center;'><a class='btn btn-primary'href='?controller=alumno&action=calificar&id=" . $fila[0] . "'>Puntuar</a></td>";
                         }
                     }
@@ -62,9 +62,7 @@
             </tbody>
         </table>
     </div>
-</div>
-<!-- BUSCAR UN BUEN CONETENEDOR PARA PONER AQUI -->
-<div class="container mt-5" style="width: 50%;">
+
     <div class="container p-4 mb-5 container1">
         <?php
         $conexion = Connect::getConnection();
@@ -77,13 +75,14 @@
                 $miTotal = $fila2[4];
             }
         }
-        echo "<h5 class='pt-3'>Pt usabilidad : " . $miUsabilidad . "</h5>";
-        echo "<h5>Pt código: " . $miCodigo . "</h5>";
+        echo "<h5 class='pt-3'>Pt usabilidad : " . round($miUsabilidad, 1) . "</h5>";
+        echo "<h5>Pt código: " . round($miCodigo, 1) . "</h5>";
         echo "<div class='container shadow-lg container2'>";
         echo "<h4 class='pt-3'>TU PUNTUACIÓN TOTAL</h4>";
-        echo "<h1>" . $miTotal . "</h1>";
+        echo "<h1>" . round($miTotal, 1) . "</h1>";
         echo "</div>";
         ?>
         <a class="btn btn-primary mt-4" href="?controller=alumno&action=calificacion">Refrescar</a>
     </div>
 </div>
+<!-- BUSCAR UN BUEN CONETENEDOR PARA PONER AQUI -->
