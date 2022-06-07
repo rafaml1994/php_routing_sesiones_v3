@@ -85,4 +85,5 @@
         <a class="btn btn-primary mt-4" href="?controller=alumno&action=calificacion">Refrescar</a>
     </div>
 </div>
+<div style="background-color:#008000 ;"></div>
 <!-- BUSCAR UN BUEN CONETENEDOR PARA PONER AQUI -->
