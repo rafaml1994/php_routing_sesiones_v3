@@ -62,7 +62,7 @@ if (isset($_POST['enviar'])) {
     $insert->bindValue(':v', $votar);
 
     $insert->execute();
-    //setcookie($id, $id, time() + 10000000000, '/');
+    setcookie($id, $id, time() + 10000000000, '/');
     header('Location: index.php?controller=alumno&action=calificaciones');
 }
 ?>
