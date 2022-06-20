@@ -1,4 +1,4 @@
-# Este es un proyecto MVC hecho con PHP en el que trabajamos tanto con sesiones, como con cookies.
+# Este es un proyecto MVC y enrutamiento hecho con PHP en el que trabajamos tanto con sesiones, como con cookies.
 
 La aplicación dispone de dos roles; uno es el rol de administrador y el otro es el rol del usuario, para poder acceder a todo el contenido, por favor ponte en contacto conmigo a través de mi Linkdin :
 
